@@ -19,5 +19,4 @@ window.addEventListener('load', () => {
    updatePrices();
 });
 
-// Экспортируем функцию updatePrices для использования в других модулях
 export { updatePrices };

@@ -20,8 +20,6 @@ currencyItems.forEach((currencyItem) => {
          const current = price.querySelector('.current');
          const normal = price.querySelector('.normal');
          const normalDiscount = price.querySelector('.normal').getAttribute('data-discount');
-         console.log(normalDiscount);
-         console.log(usd);
 
          if (currencyItem.classList.contains('usd')) {
             normal.textContent = `$${usd.toFixed(2)}`;
@@ -93,8 +91,6 @@ window.addEventListener('click', (event) => {
       modalHeartIcons.forEach((modalHeartIcon) => {
          const index = modalHeartIcon.dataset.index;
          const hoverableHeartIcon = document.querySelector(`.hoverable .ri-heart-line[data-index="${index}"]`);
-         console.log(index);
-         console.log(hoverableHeartIcon);
          if (hoverableHeartIcon) {
             if (modalHeartIcon.classList.contains('red-heart')) {
                hoverableHeartIcon.classList.add('red-heart');
@@ -119,8 +115,6 @@ heartIcons.forEach(icon => {
       event.preventDefault();
       icon.classList.toggle('red-heart');
       itemNumber.textContent = parseInt(itemNumber.textContent) + (icon.classList.contains('red-heart') ? 1 : -1);
-      console.log(icon);
-      // Сохраняем состояние в localStorage
       localStorage.setItem('heartIconsState', JSON.stringify(Array.from(heartIcons).map(icon => icon.classList.contains('red-heart'))));
       localStorage.setItem('itemNumberState', itemNumber.textContent);
    });
